@@ -15,6 +15,10 @@ pos_y_rintangan =-500
 pos_x_rintangan2 =1300
 pos_y_rintangan2 =-600
 
+pos_x_awan = 0
+pos_y_awan = 0
+gerak_awan = 0.1
+
 nyawa = 3
 game_over = False
 kalah = False
@@ -225,6 +229,208 @@ def background():
     glVertex2f(-w,h)
     glEnd()
 
+def background1() :
+    glColor(0,255,255)
+    glBegin(GL_POLYGON)
+    # Kiri bawah
+    
+    glVertex2f(-w,-h)
+    # Kanan bawah
+    
+    glVertex2f(w,-h)
+    # Kanan atas
+    
+    glVertex2f(w, h)
+    # Kiri atas
+
+    glVertex2f(-w,h)
+    glEnd()
+
+
+def fullmatahari() :
+    matahari1()
+    matahari2()
+    matahari3()
+    matahari4()
+
+
+def matahari1():
+    glColor3ub(255,128,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(200 , 500)
+    glVertex2f(400 , 500)
+    glVertex2f(400 , 300)
+    glVertex2f(200 , 300)
+    glEnd()
+
+def matahari2 ():
+    glColor3ub(255,153,51)
+    glBegin(GL_POLYGON)
+    glVertex2f(220, 480)
+    glVertex2f(380, 480)
+    glVertex2f(380, 320)
+    glVertex2f(220, 320)
+    glEnd()
+
+def matahari3():
+    glColor3ub(255,255,102)
+    glBegin(GL_POLYGON)
+    glVertex2f(240, 460)
+    glVertex2f(360, 460)
+    glVertex2f(360, 340)
+    glVertex2f(240, 340)
+    glEnd()
+
+def matahari4 ():
+    glColor3ub(255,255,153)
+    glBegin(GL_POLYGON)
+    glVertex2f(260, 440)
+    glVertex2f(340, 440)
+    glVertex2f(340, 360)
+    glVertex2f(260, 360)
+    glEnd()
+
+def fullawan1(): 
+    global pos_x_awan,pos_y_awan, gerak_awan
+    if pos_x_awan <= -1300:
+        pos_x_awan = 1300
+    pos_x_awan -= gerak_awan
+
+    glPushMatrix()
+    glTranslated(pos_x_awan, pos_y_awan, 0)  
+    awan1()
+    awan2()
+    glPopMatrix()
+
+
+  
+
+
+
+def awan1() :
+    glColor3ub(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(440, 540)
+    glVertex2f(450, 540)
+    glVertex2f(450, 560)
+    glVertex2f(440, 560)
+    glEnd()
+
+    glColor3b(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(450, 560)
+    glVertex2f(460, 560)
+    glVertex2f(460, 570)
+    glVertex2f(450, 570)
+    glEnd()
+
+    glColor3b(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(460, 570)
+    glVertex2f(470.5, 570)
+    glVertex2f(470.5, 580)
+    glVertex2f(460, 580)
+    glEnd()
+
+    glColor3b(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(470.5, 580)
+    glVertex2f(480.5, 580)
+    glVertex2f(480.5, 600)
+    glVertex2f(470.5, 590)
+    glEnd()
+
+    glColor3b(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(480.5, 590)
+    glVertex2f(500.5, 590)
+    glVertex2f(500.5, 600)
+    glVertex2f(480.5, 600)
+    glEnd()
+
+    glColor3b(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(500.5, 590)
+    glVertex2f(510.5, 590)
+    glVertex2f(510.5, 580)
+    glVertex2f(500.5, 580)
+    glEnd()
+
+    glColor3b(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(510.5, 580)
+    glVertex2f(520.5, 580)
+    glVertex2f(520.5, 570)
+    glVertex2f(510.5, 570)
+    glEnd()
+
+    glColor3b(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(520.5, 570)
+    glVertex2f(540, 570)
+    glVertex2f(540, 560)
+    glVertex2f(520.5, 560)
+    glEnd()
+
+    glColor3b(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(540, 560)
+    glVertex2f(550, 560)
+    glVertex2f(550, 540)
+    glVertex2f(540, 540)
+    glEnd()
+
+    glColor3b(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(540, 540)
+    glVertex2f(540, 530)
+    glVertex2f(530, 530)
+    glVertex2f(530, 540)
+    glEnd()
+
+    glColor3b(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(530, 530)
+    glVertex2f(530, 520)
+    glVertex2f(460, 520)
+    glVertex2f(460, 530)
+    glEnd()
+
+    glColor3b(0,0,0)
+    glBegin(GL_POLYGON)
+    glVertex2f(460, 530)
+    glVertex2f(460, 540)
+    glVertex2f(450, 540)
+    glVertex2f(450, 530)
+    glEnd()
+
+def awan2():
+    glColor(255,255,255)
+    glBegin(GL_POLYGON)
+    glVertex2f(450, 540)
+    glVertex2f(450, 560)
+    glVertex2f(460, 560)
+    glVertex2f(460, 560)
+    glVertex2f(460, 570)
+    glVertex2f(470.5, 570)
+    glVertex2f(470.5, 580)
+    glVertex2f(480.5, 580)
+    glVertex2f(480.5, 590)
+    glVertex2f(500.5, 590)
+    glVertex2f(500.5, 580)
+    glVertex2f(510.5, 580)
+    glVertex2f(510.5, 570)
+    glVertex2f(520.5, 570)
+    glVertex2f(520.5, 560)
+    glVertex2f(540, 560)
+    glVertex2f(540, 540)
+    glVertex2f(530, 540)
+    glVertex2f(530, 530)
+    glVertex2f(460, 530)
+    glVertex2f(460, 540)
+    glVertex2f(450, 540)
+    glEnd()
+
 def kgedung():
     gedung2()
     gedung()
@@ -237,7 +443,7 @@ def kgedung():
     gedung9()
 
 def gedung():
-    glColor3ub(200, 200, 200)
+    glColor3ub(153, 76, 0)
     glBegin(GL_POLYGON)
     glVertex2f(1000 , -300)
     glVertex2f(1000 , 0)
@@ -246,7 +452,7 @@ def gedung():
     glEnd()
 
 def gedung7():
-    glColor3ub(120, 200, 209)
+    glColor3ub(255, 153, 51)
     glBegin(GL_POLYGON)
     glVertex2f(-1000 , -300)
     glVertex2f(-1000 , 500)
@@ -255,7 +461,7 @@ def gedung7():
     glEnd()
 
 def gedung2():
-    glColor3ub(100, 100, 100)
+    glColor3ub(0, 0, 153)
     glBegin(GL_POLYGON)
     glVertex2f(900 , 0)
     glVertex2f(900 , 100)
@@ -265,7 +471,7 @@ def gedung2():
     glEnd()
 
 def gedung3():
-    glColor3ub(290, 290, 290)
+    glColor3ub(64, 64, 64)
     glBegin(GL_POLYGON)
     glVertex2f(300 , -300)
     glVertex2f(300 , 100)
@@ -274,7 +480,7 @@ def gedung3():
     glEnd()
 
 def gedung4():
-    glColor3ub(270, 240, 120)
+    glColor3ub(255, 0, 127)
     glBegin(GL_POLYGON)
     glVertex2f(0 , -300)
     glVertex2f(0 , 0)
@@ -1265,8 +1471,10 @@ def bg_text(x,y):
 
 def play_game():
     global nyawa,state_nyawa
-    background()
+    background1()
     kgedung()
+    fullmatahari()
+    fullawan1()
     jendela()
     trotoar()
     jalan()
