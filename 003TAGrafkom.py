@@ -252,42 +252,43 @@ def fullmatahari() :
     matahari2()
     matahari3()
     matahari4()
+    
 
 
 def matahari1():
     glColor3ub(255,128,0)
     glBegin(GL_POLYGON)
-    glVertex2f(200 , 500)
-    glVertex2f(400 , 500)
-    glVertex2f(400 , 300)
-    glVertex2f(200 , 300)
+    glVertex2f(900, 500)
+    glVertex2f(1100, 500)
+    glVertex2f(1100, 300)
+    glVertex2f(900, 300)
     glEnd()
 
 def matahari2 ():
     glColor3ub(255,153,51)
     glBegin(GL_POLYGON)
-    glVertex2f(220, 480)
-    glVertex2f(380, 480)
-    glVertex2f(380, 320)
-    glVertex2f(220, 320)
+    glVertex2f(920, 480)
+    glVertex2f(1080, 480)
+    glVertex2f(1080, 320)
+    glVertex2f(920, 320)
     glEnd()
 
 def matahari3():
     glColor3ub(255,255,102)
     glBegin(GL_POLYGON)
-    glVertex2f(240, 460)
-    glVertex2f(360, 460)
-    glVertex2f(360, 340)
-    glVertex2f(240, 340)
+    glVertex2f(940, 460)
+    glVertex2f(1060, 460)
+    glVertex2f(1060, 340)
+    glVertex2f(940, 340)
     glEnd()
 
 def matahari4 ():
     glColor3ub(255,255,153)
     glBegin(GL_POLYGON)
-    glVertex2f(260, 440)
-    glVertex2f(340, 440)
-    glVertex2f(340, 360)
-    glVertex2f(260, 360)
+    glVertex2f(960, 440)
+    glVertex2f(1040, 440)
+    glVertex2f(1040, 360)
+    glVertex2f(960, 360)
     glEnd()
 
 def fullawan1(): 
