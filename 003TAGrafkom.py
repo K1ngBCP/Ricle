@@ -504,7 +504,7 @@ def trotoar():
 def jalan():
     global posxjalan,posyjalan, gerakjalan
     if posxjalan <= -1300:
-        posxjalan = 1300
+        posxjalan = -600
     posxjalan -= gerakjalan
 
     glPushMatrix()
@@ -1299,6 +1299,12 @@ def mouse_play_game(button, state, x, y):
     if button == GLUT_LEFT_BUTTON:
         play = True
 
+def mykeyBoard(key,x,y):
+    global play,nyawa
+    if ord(key) == ord(b'\r'):
+        play = False
+        nyawa = 3
+
 def iterate():
     glViewport(0, 0, w, h)
     glMatrixMode(GL_PROJECTION)
@@ -1325,5 +1331,6 @@ glutCreateWindow("RICLE")
 glutDisplayFunc(showScreen)
 glutIdleFunc(showScreen)
 glutSpecialFunc(mySpecialKeyboard)
+glutKeyboardFunc(mykeyBoard)
 glutMouseFunc(mouse_play_game)
 glutMainLoop()
